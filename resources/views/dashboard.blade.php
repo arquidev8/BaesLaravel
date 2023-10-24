@@ -11,7 +11,7 @@
 
     <p>Total de propiedades: {{ $properties->count() }}</p>
 
-    
+
     <form method="GET" action="{{ route('dashboard') }}" class="space-y-4">
     <label for="Price" class="block text-sm font-medium text-gray-700">Precio:</label>
     <select name="Price" id="price" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -23,12 +23,24 @@
 
     <label for="Provincia" class="block text-sm font-medium text-gray-700">Provincia:</label>
     <select name="Provincia" id="provincia" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <option value="">Todos</option>
         <option value="Murcia"{{ request('Provincia') == 'Murcia' ? ' selected' : '' }}>Murcia</option>
         <option value="Alicante"{{ request('Provincia') == 'Alicante' ? ' selected' : '' }}>Alicante</option>
         <option value="Madrid"{{ request('Provincia') == 'Madrid' ? ' selected' : '' }}>Madrid</option>
         <option value="Barcelona"{{ request('Provincia') == 'Barcelona' ? ' selected' : '' }}>Barcelona</option>
         <!-- Agrega las opciones de provincia en mayúscula -->
     </select>
+
+    <label for="Ciudad" class="block text-sm font-medium text-gray-700">Ciudad:</label>
+    <select name="Ciudad" id="ciudad" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <option value="">Todos</option>
+        <option value="Murcia"{{ request('Ciudad') == 'Murcia' ? ' selected' : '' }}>Murcia</option>
+        <option value="Alicante"{{ request('Ciudad') == 'Alicante' ? ' selected' : '' }}>Alicante</option>
+        <option value="Madrid"{{ request('Ciudad') == 'Madrid' ? ' selected' : '' }}>Madrid</option>
+        <option value="Barcelona"{{ request('Ciudad') == 'Barcelona' ? ' selected' : '' }}>Barcelona</option>
+        <!-- Agrega las opciones de ciudad en mayúscula -->
+    </select>
+
 
     <div class="flex items-center justify-between">
         <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
