@@ -21,6 +21,8 @@ class DigloProperty extends Model
         'Habitaciones', 
         'Banos', 
         'Price',
-        'MainPhoto'
+        'MainPhoto',
+        'ImageSources',
+        'Ciudad'
     ];
 }

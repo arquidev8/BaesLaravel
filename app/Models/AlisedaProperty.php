@@ -10,6 +10,7 @@ class AlisedaProperty extends Model
     use HasFactory;
 
     protected $table = 'aliseda_properties';
+    
 
     protected $fillable = [
         'Referencia', 
@@ -21,6 +22,10 @@ class AlisedaProperty extends Model
         'Habitaciones', 
         'Banos', 
         'Price',
-        'MainPhoto'
+        'MainPhoto',
+        'ImageSources',
+        'Ciudad'
     ];
+
+    
 }

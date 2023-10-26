@@ -3,7 +3,7 @@
 
 <div class="card">
   
-<a href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+<a href="{{ route('property-details', $property->Referencia) }}"  class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
    <img
     alt="{{ $property->Title }}"
     src="{{ $property->MainPhoto }}"
