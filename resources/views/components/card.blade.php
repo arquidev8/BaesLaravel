@@ -9,24 +9,44 @@
     src="{{ $property->MainPhoto }}"
     class="h-56 w-full rounded-md object-cover"
   />
+  {{-- @if(getimagesize($property->MainPhoto))
+  <img
+    alt="{{ $property->Title }}"
+    src="{{ $property->MainPhoto }}"
+    class="h-56 w-full rounded-md object-cover"
+  />
+  @else
+    <img
+      alt="{{ $property->Title }}"
+      src="https://i.postimg.cc/qMmJYQdz/imagedefault.png"
+      class="h-56 w-full rounded-md object-cover"
+    />
+  @endif --}}
 
   <div class="mt-2">
     <dl>
       <div>
         <dt class="sr-only">Price</dt>
-        <dd class="text-sm text-gray-500">${{ $property->Price }}</dd>
+        {{-- <dd class="text-sm ">€{{ $property->Price }}</dd> --}}
+        {{-- <dd class="text-xs"><strong>Precio:</strong>  €{{ number_format($property->Price, 2, ',', '.') }}</dd> --}}
+        <dd class="text-xs"><strong>Precio:</strong>  €{{ number_format(floatval($property->Price), 2, ',', '.') }}</dd>
+
+      </div>
+      <div class="mb-2 mt-2">
+          <dt class="sr-only text-sm">Address</dt>
+          <dd class="font-medium text-xs"><strong>Dirección:  </strong>  {{ $property->Direccion }}</dd>
+          
       </div>
       <div>
-        <dt class="sr-only">Address</dt>
-        <dd class="font-medium">{{ $property->Direccion }}</dd>
-         <dd class="font-medium">{{ $property->Provincia }}</dd>
+          <dt class="sr-only">Province</dt>
+          <dd class="font-medium text-xs"><strong>Provincia:  </strong>   {{ $property->Provincia }}</dd>
       </div>
     </dl>
 
     <div class="mt-6 flex items-center gap-8 text-xs">
       <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
         <svg
-          class="h-4 w-4 text-indigo-700"
+          class="h-4 w-4 text-red-700"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -47,7 +67,7 @@
         
 
         <div class="mt-1.5 sm:mt-0">
-          <p class="text-gray-500">Bathroom</p>
+          <p class="">Bathroom</p>
 
           <p class="font-medium">{{ $property->Habitaciones }}</p>
         </div>
@@ -55,7 +75,7 @@
 
       <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
         <svg
-          class="h-4 w-4 text-indigo-700"
+          class="h-4 w-4 text-red-700"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -70,7 +90,7 @@
         </svg>
 
         <div class="mt-1.5 sm:mt-0">
-          <p class="text-gray-500">Bedroom</p>
+          <p class="">Bedroom</p>
 
           <p class="font-medium">{{ $property->Banos }}</p>
         </div>

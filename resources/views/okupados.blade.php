@@ -1,12 +1,9 @@
-
-
-
 <script src="https://cdn.tailwindcss.com"></script>
 <x-app-layout>
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Okupados') }}
         </h2>
     </x-slot>
 
@@ -22,7 +19,7 @@
             @endif --}}
        
     </div>
-        <form method="GET" action="{{ route('dashboard') }}">
+        <form method="GET" action="{{ route('okupados') }}">
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 md:p-12 sm:0">
                 <div>
                     <label for="Price" class="block text-sm font-medium ">Precio:</label>
@@ -188,7 +185,7 @@
                     <button type="submit" class="inline-block w-full sm:w-auto px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Filtrar
                     </button>
-                    <a href="{{ route('dashboard') }}" class="text-sm text-red-700 hover:text-red-900">Restablecer</a>
+                    <a href="{{ route('okupados') }}" class="text-sm text-red-700 hover:text-red-900">Restablecer</a>
                 </div>
             </div>
         </form>
@@ -201,7 +198,7 @@
 
         <div  class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 gap-4 md:p-6 sm:p-0">
             @foreach ($properties as $property)
-                @include('components.card', ['property' => $property])
+                @include('components.cardOkupa', ['property' => $property])
             @endforeach
         </div>
 

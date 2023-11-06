@@ -4,9 +4,10 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center nav-logo-red bg-red-600 ">
                     <a href="{{ route('dashboard') }}">
                         {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
+                        <h1><strong>BAES</strong></h1>
                     </a>
                 </div>
 
@@ -17,6 +18,10 @@
                     </x-nav-link>
                 </div>
             </div>
+
+            <x-nav-link :href="route('okupados')" :active="request()->routeIs('okupados')" class="nav-link-black">
+            {{ __('Okupados') }}
+            </x-nav-link>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -98,3 +103,22 @@
         </div>
     </div>
 </nav>
+
+<style>
+
+    .nav-link-black {
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        padding: 5px 30px;
+        }
+
+    .nav-logo-red {
+    color: white;
+
+    border-radius: 10px;
+    padding: 5px 50px;
+    }
+
+
+</style>

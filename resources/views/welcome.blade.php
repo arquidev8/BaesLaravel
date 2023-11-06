@@ -40,7 +40,7 @@
             Base de Datos de Activos Adjudicados en España (BAE)
           </h2>
 
-          <p class="hidden text-white/90 sm:mt-4 sm:block">
+          <p class="hidden text-white/90 text-justify sm:mt-4 sm:block">
             <strong>IMPORTANTE:</strong> Este portal es un directorio privado de propiedades que se encuentra protegido por la Ley de Secretos Empresariales de España (Ley 1/2019, de 20 de febrero). El acceso a este portal se otorga exclusivamente por invitación. Es importante tener en cuenta que las credenciales de acceso vencen cada 15 días, por lo tanto, el usuario debe solicitar la renovación a la persona que le proporcionó el acceso si desea seguir utilizándolo. Debido a que las propiedades mostradas en este directorio provienen de fondos de reestructuración bancaria, la información proporcionada puede contener errores tanto en su descripción como en el precio. Por esta razón, la información contenida en este portal no tiene carácter vinculante.
           </p>
 
@@ -63,5 +63,38 @@
     </div>
   </div>
 </section>
+
+      <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Agrega las clases correspondientes en modo oscuro
+        document.body.classList.add('dark')
+        } else {
+        // Agrega las clases correspondientes en modo claro
+        document.body.classList.remove('dark')
+        }
+    </script>
+    <style>
+        .bg-gray-100 {
+            background-color: #f7fafc;
+            }
+
+            .text-gray-900 {
+            color: #1a202c;
+            }
+
+            /* Clases para modo oscuro */
+            .dark .bg-gray-100 {
+            background-color: #1a202c;
+            }
+
+            .dark .text-gray-900 {
+            color: #f7fafc;
+            }
+    
+    </style>
+
+
+
+
     </body>
 </html>

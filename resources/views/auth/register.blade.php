@@ -16,6 +16,20 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+          <!-- Phone -->
+        <div class="mt-4">
+            <x-input-label for="phone" :value="__('Phone')" />
+            <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autocomplete="phone" />
+            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+        </div>
+
+        <!-- Email Refer -->
+        <div class="mt-4">
+            <x-input-label for="referral_email" :value="__('Referral email')" />
+            <x-text-input id="referral_email" class="block mt-1 w-full" type="email" name="referral_email" :value="old('referral_email')" required autocomplete="email" />
+            <x-input-error :messages="$errors->get('referral_email')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
