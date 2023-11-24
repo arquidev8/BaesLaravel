@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center nav-logo-red bg-red-600 ">
                     <a href="{{ route('dashboard') }}">
                         {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
-                        <h1><strong>BAES</strong></h1>
+                        <h1><strong>BAE</strong></h1>
                     </a>
                 </div>
 
@@ -19,9 +19,9 @@
                 </div>
             </div>
 
-            <x-nav-link :href="route('okupados')" :active="request()->routeIs('okupados')" class="nav-link-black">
+            {{-- <x-nav-link :href="route('okupados')" :active="request()->routeIs('okupados')" class="nav-link-black">
             {{ __('Okupados') }}
-            </x-nav-link>
+            </x-nav-link> --}}
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -42,6 +42,11 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        
+                        <x-dropdown-link :href="route('okupados')" :active="request()->routeIs('okupados')">
+                        {{ __('Okupados') }}
+                        </x-dropdown-link>
+
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -87,6 +92,10 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('okupados')" :active="request()->routeIs('okupados')">
+                        {{ __('Okupados') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

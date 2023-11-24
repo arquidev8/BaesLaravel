@@ -379,7 +379,7 @@ class DashboardController extends Controller
         }
 
         $page = $request->query('page', 1);
-        $perPage = 30;
+        $perPage = 20;
         $offset = ($page - 1) * $perPage;
 
         $properties = new \Illuminate\Pagination\LengthAwarePaginator(

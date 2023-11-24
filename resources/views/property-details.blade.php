@@ -96,16 +96,16 @@
     document.getElementById('modal').classList.add('hidden');
   }
 
-   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+   {{-- if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         // Agrega las clases correspondientes en modo oscuro
         document.body.classList.add('dark')
         } else {
         // Agrega las clases correspondientes en modo claro
         document.body.classList.remove('dark')
-        }
+        } --}}
 </script>
 
-    <style>
+    {{-- <style>
         .bg-gray-100 {
             background-color: #f7fafc;
             }
@@ -123,7 +123,7 @@
             color: #f7fafc;
             }
     
-    </style>
+    </style> --}}
 
 
 </body>

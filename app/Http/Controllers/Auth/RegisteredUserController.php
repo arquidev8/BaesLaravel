@@ -125,7 +125,7 @@ class RegisteredUserController extends Controller
         ]);
 
         // Set the user as admin if a specific condition is met
-        if ($user->email === 'admin@example.com') {
+        if ($user->email === 'info@hannanpiper.com') {
             $user->is_admin = true;
             $user->save();
         }

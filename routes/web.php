@@ -49,8 +49,7 @@ Route::get('/okupados', [OkupadosController::class, 'showOkupados'])->name('okup
 // Route::get('/okupados', function () {
 //     return view('okupados');
 // })->middleware(['auth', 'verified'])->name('okupados');
-
-Route::middleware('auth')->group(function () {
+Route::patch('/users/{user}/change-approval-status', [AdministradorUsuariosController::class, 'changeApprovalStatus'])->name('users.changeApprovalStatus');Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

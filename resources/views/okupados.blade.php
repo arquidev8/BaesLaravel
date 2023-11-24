@@ -206,7 +206,7 @@
     </div>
 
 
-     <script>
+     {{-- <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         // Agrega las clases correspondientes en modo oscuro
         document.body.classList.add('dark')
@@ -233,7 +233,7 @@
             color: #f7fafc;
             }
     
-    </style>
+    </style> --}}
 
 
 </x-app-layout>

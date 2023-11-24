@@ -26,7 +26,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 md:p-12 sm:0">
                 <div>
                     <label for="Price" class="block text-sm font-medium ">Precio:</label>
-                    <select name="Price" id="price" class="mt-1 block w-full py-2 px-3 border text-black border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <select name="Price" id="price" class="select-input mt-1 block w-full py-2 px-3 border text-black border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">Todos</option>
                         <option value="50000"{{ request('Price') == '50000' ? ' selected' : '' }}>50.000</option>
                         <option value="100000"{{ request('Price') == '100000' ? ' selected' : '' }}>100.000</option>
@@ -75,7 +75,7 @@
                 </div>
                 <div>
                     <label for="Provincia" class="block text-sm font-medium ">Provincia:</label>
-                    <select name="Provincia" id="provincia" class="text-black mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <select name="Provincia" id="provincia" class="select-input text-black mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">Todos</option>
                        <option value="Álava"{{ request('Provincia') == 'Álava' ? ' selected' : '' }}>Álava</option>
                         <option value="Albacete"{{ request('Provincia') == 'Albacete' ? ' selected' : '' }}>Albacete</option>
@@ -114,7 +114,7 @@
                 <div>
                     <label for="Ciudad" class="block text-sm font-medium ">Ciudad:</label>
                     
-                    <select name="Ciudad" id="ciudad" class="text-black mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <select name="Ciudad" id="ciudad" class="select-input text-black mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                          <option value="">Todos</option>
                         <option value="Murcia"{{ request('Ciudad') == 'Murcia' ? ' selected' : '' }}>Murcia</option>
                         <option value="Alicante"{{ request('Ciudad') == 'Alicante' ? ' selected' : '' }}>Alicante</option>
@@ -207,36 +207,6 @@
 
         {{ $properties->links() }}
     </div>
-
-
-     <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Agrega las clases correspondientes en modo oscuro
-        document.body.classList.add('dark')
-        } else {
-        // Agrega las clases correspondientes en modo claro
-        document.body.classList.remove('dark')
-        }
-    </script>
-    <style>
-        .bg-gray-100 {
-            background-color: #f7fafc;
-            }
-
-            .text-gray-900 {
-            color: #1a202c;
-            }
-
-            /* Clases para modo oscuro */
-            .dark .bg-gray-100 {
-            background-color: #1a202c;
-            }
-
-            .dark .text-gray-900 {
-            color: #f7fafc;
-            }
-    
-    </style>
 
 
 </x-app-layout>

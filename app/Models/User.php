@@ -64,6 +64,7 @@ class User extends Authenticatable
         'phone',
         'referral_email',
         'is_admin',
+        'approved',
     ];
 
     protected $hidden = [

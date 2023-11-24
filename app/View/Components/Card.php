@@ -19,8 +19,22 @@ class Card extends Component
     /**
      * Get the view / contents that represent the component.
      */
+    // public function render(): View|Closure|string
+    // {
+    //     return view('components.card');
+    // }
+
     public function render(): View|Closure|string
     {
-        return view('components.card');
+        return view('components.card')
+            ->with('isValidImageUrl', function($url) {
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+                curl_exec($curl);
+                $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+                return $statusCode === 200;
+            });
     }
 }
